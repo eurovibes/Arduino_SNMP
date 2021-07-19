@@ -569,7 +569,7 @@ bool SNMPAgent::removeHandler(ValueCallback* callback){ // this will remove the 
 bool SNMPAgent::sortHandlers(){ // we want to sort our callbacks in order of OID's so we can walk correctly
     callbacksCursor = callbacks;
     
-    int swapped, i;
+    int swapped;
     ValueCallbacks* ptr1;
     ValueCallbacks* lptr = 0;
  

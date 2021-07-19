@@ -310,7 +310,7 @@ class NullType: public BER_CONTAINER {
         *ptr = 0;
         return 2;
     }
-    bool fromBuffer(unsigned char* buf){
+    bool fromBuffer(unsigned char* buf __attribute__((unused))){
         _length = 0;
         return true;
     }
