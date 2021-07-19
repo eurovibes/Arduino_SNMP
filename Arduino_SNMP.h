@@ -126,7 +126,7 @@ class SNMPAgent {
         ValueCallback* addCounter32Handler(char* oid, uint32_t* value, bool overwritePrefix = false);
         ValueCallback* addGuageHandler(char* oid, uint32_t* value, bool overwritePrefix);
 
-        bool setUDP(UDP* udp);
+        void setUDP(UDP* udp);
         bool begin();
         bool begin(char*);
         bool loop();
@@ -160,7 +160,7 @@ class SNMPAgent {
         }
 };
 
-bool SNMPAgent::setUDP(UDP* udp){
+void SNMPAgent::setUDP(UDP* udp){
     if(_udp){
         _udp->stop();
     }

@@ -61,8 +61,8 @@ class SNMPResponse {
     ResponseList* responseList = new ResponseList();
     ResponseList* responseConductor = responseList;
     
-    bool addResponse(SNMPOIDResponse* response);
-    bool addErrorResponse(SNMPOIDResponse* response, int index);
+    void addResponse(SNMPOIDResponse* response);
+    void addErrorResponse(SNMPOIDResponse* response, int index);
     int serialise(unsigned char* buf);
     
   private:
@@ -70,13 +70,13 @@ class SNMPResponse {
     bool build();
 };
 
-bool SNMPResponse::addResponse(SNMPOIDResponse* response){
+void SNMPResponse::addResponse(SNMPOIDResponse* response){
     responseConductor->value = response;
     responseConductor->next = new ResponseList();
     responseConductor = responseConductor->next;
 }
 
-bool SNMPResponse::addErrorResponse(SNMPOIDResponse* response, int index){
+void SNMPResponse::addErrorResponse(SNMPOIDResponse* response, int index){
     responseConductor->value = response;
     
     // check for error passed in

@@ -583,7 +583,7 @@ class ComplexType: public BER_CONTAINER {
         return _length;
     }
     
-    bool addValueToList(BER_CONTAINER* newObj){
+    void addValueToList(BER_CONTAINER* newObj){
         ValuesList* conductor = _values;
         if(_values != 0){
             while(conductor->next != 0){
