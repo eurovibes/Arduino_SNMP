@@ -300,6 +300,9 @@ bool inline SNMPAgent::receivePacket(int packetLength){
                                             setOccurred = true;
                                         }
                                     break;
+									default:
+									// Ignore the rest
+									break;
                                 }
                                 response->addResponse(OIDResponse);
                             }

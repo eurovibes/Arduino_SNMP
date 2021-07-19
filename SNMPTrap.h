@@ -128,6 +128,11 @@ bool SNMPTrap::build(){
                         value = new OctetType(*((StringCallback*)callbacksCursor->value)->value);
                     }
                 break;
+				default:
+					{
+						value = new NullType();
+					}
+				break;
             }
             varBind->addValueToList(value);
             varBindList->addValueToList(varBind);
