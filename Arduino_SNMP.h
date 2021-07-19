@@ -171,6 +171,7 @@ void SNMPAgent::setUDP(UDP* udp){
 bool SNMPAgent::begin(){
     if(!_udp) return false;
     _udp->begin(161);
+	return true;
 }
 
 bool SNMPAgent::begin(char* prefix){
@@ -183,6 +184,7 @@ bool SNMPAgent::loop(){
         return false;
     }
     receivePacket(_udp->parsePacket());
+	return true;
 }
 
 bool inline SNMPAgent::receivePacket(int packetLength){
@@ -389,6 +391,7 @@ bool inline SNMPAgent::receivePacket(int packetLength){
     delete snmprequest;
 
 //    //Serial.printf("Current heap size: %u\n", ESP.getFreeHeap());
+	return true;
 }
 
 ValueCallback* SNMPAgent::findCallback(char* oid, bool next){
